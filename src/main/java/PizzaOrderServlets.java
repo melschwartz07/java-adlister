@@ -31,6 +31,6 @@ public class PizzaOrderServlets extends HttpServlet {
         System.out.print("");
         System.out.println(request.getParameter("address"));
 
-        response.sendRedirect("/");
+        response.sendRedirect("/hello");
     }
 }
