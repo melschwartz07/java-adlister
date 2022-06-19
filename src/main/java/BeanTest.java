@@ -1,3 +1,6 @@
+//TODO: Create a class, BeanTest, and include a main method that instantiates a few instances of
+// Album, Author and Quote.
+
 import model.Album;
 import model.Author;
 import model.Quote;
