@@ -6,16 +6,12 @@ public class Quote implements Serializable {
 
     private long id;
     private String content;
-    private long authorId;
+    private String author;
 
-    public Quote(long id, String content, long authorId) {
+    public Quote(long id, String content, String author) {
         this.id = id;
         this.content = content;
-        this.authorId = authorId;
-    }
-
-    public Quote(){
-
+        this.author = author;
     }
 
     public long getId() {
@@ -34,11 +30,11 @@ public class Quote implements Serializable {
         this.content = content;
     }
 
-    public long getAuthorId() {
-        return authorId;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setAuthorId(long authorId) {
-        this.authorId = authorId;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 }
