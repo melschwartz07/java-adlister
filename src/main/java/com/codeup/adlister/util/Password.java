@@ -1,15 +1,27 @@
-package com.codeup.adlister.util;
+
+
+package com.codeup.adlister;
 
 import org.mindrot.jbcrypt.BCrypt;
 
-public class Password {
-    private static final int ROUNDS = 12;
+public class codeRunner {
 
-    public static String hash(String password) {
-        return BCrypt.hashpw(password, BCrypt.gensalt(ROUNDS));
-    }
+    public static void main(String[] args) {
 
-    public static boolean check(String password, String hash) {
-        return BCrypt.checkpw(password, hash);
+        String password = "supersecretpw";
+
+        String hashPW8 = BCrypt.hashpw(password, BCrypt.gensalt(8));
+        String hashPW10 = BCrypt.hashpw(password, BCrypt.gensalt(10));
+        String hashPW12 = BCrypt.hashpw(password, BCrypt.gensalt(12));
+
+        System.out.println(password + " was our original password");
+        System.out.println(hashPW8 + ": (8 rounds) is the result after a little bcrypt :o");
+        System.out.println(hashPW10 + ": (10 rounds) is the result after a little bcrypt :o");
+        System.out.println(hashPW12 + ": (12 rounds) is the result after a little bcrypt :o");
+
+        System.out.println();
+
+        System.out.println("BCrypt.checkpw(\"notsosecretpw\", hashPW12) = " + BCrypt.checkpw("notsosecretpw", hashPW12));
+
     }
 }
